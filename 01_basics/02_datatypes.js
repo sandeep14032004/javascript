@@ -9,6 +9,6 @@ console.log("good evening");
 // symbol = unique
 
 // object = 
-console.log(typeof("sandeep"));
-console.log(typeof null);
-console.log(typeof undefined);
+// console.log(typeof("sandeep"));
+// console.log(typeof null);
+// console.log(typeof undefined);
