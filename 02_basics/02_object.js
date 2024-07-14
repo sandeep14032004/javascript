@@ -84,8 +84,19 @@
 
 
 // ********************************************
-const tinderuser = new Object()
-tinderuser.id = "123we"
-tinderuser.name = "abd"
-tinderuser.isLoggedIn = true
-console.log(tinderuser);
+// const tinderuser = new Object()
+// tinderuser.id = "123we"
+// tinderuser.name = "abd"
+// tinderuser.isLoggedIn = true
+// console.log(tinderuser);
+// const course = {
+//     courseName : "js in hindi",
+// //     price : "999",
+// //     courseInfrastructor : "sandeep"
+
+// // }
+// // // course.courseInfrastructor
+// // const {price}=course
+// // console.log(price);
+
+
