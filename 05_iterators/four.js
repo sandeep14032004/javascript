@@ -107,5 +107,5 @@ const menu = [
 ];
 
 
-totalPrice = menu.reduce((acc,p)=>acc+p.price,0)
-console.log(totalPrice);
+// totalPrice = menu.reduce((acc,p)=>acc+p.price,0)
+// console.log(totalPrice);
