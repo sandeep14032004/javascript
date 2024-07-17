@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Example</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Hello, DOM!</h1>
+    <p class="content">This is a paragraph.</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        function changeText() {
+            // Accessing an element by ID
+            const heading = document.getElementById('heading');
+            heading.textContent = 'DOM Manipulation Example';
+
+            // Accessing an element by class name
+            const paragraph = document.querySelector('.content');
+            paragraph.style.color = 'blue';
+
+            // Creating a new element
+            const newElement = document.createElement('p');
+            newElement.textContent = 'This is a new paragraph.';
+            document.body.appendChild(newElement);
+
+            // Removing an element
+            setTimeout(() => {
+                document.body.removeChild(newElement);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
