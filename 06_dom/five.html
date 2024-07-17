@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA & Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #242222;
+            color: #d8d0d0;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Ensure watermark stays at the bottom */
+            min-height: 100vh; /* Ensure watermark stretches to full height */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #000000;
+            padding: 90px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 10px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ccc;
+            width: 100%;
+        }
+
+        .watermark p {
+            font-size: 14px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>CGPA & Percentage Calculator</h2>
+        <div class="input-group">
+            <label for="cgpa">Enter CGPA:</label>
+            <input type="number" id="cgpa" step="0.01" placeholder="Enter your CGPA">
+        </div>
+        <button class="btn" onclick="calculatePercentage()">Convert to Percentage</button>
+
+        <div class="result"><span id="output"></span></div>
+
+        <div class="input-group">
+            <label for="percentage">Enter Percentage:</label>
+            <input type="number" id="percentage" step="0.01" placeholder="Enter your Percentage">
+        </div>
+        <button class="btn" onclick="calculateCGPA()">Convert to CGPA</button>
+
+        <div class="result"><span id="output1"></span></div>
+    </div>
+
+    <!-- Watermark -->
+    <div class="watermark">
+        <p>&copy; 2024 SANDEEP. All rights reserved.<br>Contact: 8260195633 , sandeeppati69@gmail.com</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/sandeep_27.2/" target="_blank"><img src="weather-app-img/images/instagram.jpeg" alt="Instagram"></a>
+            <a href="https://x.com/sandeep_pati18" target="_blank"><img src="weather-app-img/images/twitter.png" alt="Twitter"></a>
+            <a href="https://www.linkedin.com/in/sandeep-pati-537ba030b/" target="_blank"><img src="weather-app-img/images/linked in.webp" alt="LinkedIn"></a>
+        </div>
+    </div>
+
+    <script>
+        function calculatePercentage(){
+            let cgpa = document.querySelector('#cgpa').value
+            let converted_percentage = Number(cgpa)*9.5;
+            if (Number(cgpa) > 10){
+                alert("Wrong Input!!!")
+            }
+            else{
+                document.querySelector('#output').innerText ="Percentage: "+converted_percentage.toFixed(2) + "%";
+            }
+        }
+        
+        function calculateCGPA(){
+            let percentage = document.querySelector('#percentage').value
+            if(Number(percentage)>100){
+                alert("Wrong Input!!!")
+            }
+            else{
+                let converted_cgpa = Number(percentage)/9.5;
+                if(Number(percentage) > 95){
+                    document.querySelector('#output1').innerText = "CGPA: 10.00";
+                }
+                else{
+                    document.querySelector('#output1').innerText ="CGPA: "+converted_cgpa.toFixed(2);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
