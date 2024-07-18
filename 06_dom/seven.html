@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virat Kohli Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: auto;
+            height: auto;
+            background-color: #007bff;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding-bottom: 30px;
+        }
+
+        .container img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .container h1 {
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            margin: 10px 0 0 0;
+        }
+        
+        .container h4 {
+            font-size: 25px;
+            color: rgb(255, 0, 34);
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; 
+            margin-top: 20px; 
+        }
+
+        .btn-container .btn-container1 {
+            margin: 10px;
+        }
+
+        .btn-container1 {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0b0b0b;
+            color: #ececec;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-container1:hover {
+            background-color: wheat;
+            color: black; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.hindustantimes.com/static-content/1y/cricket-logos/players/virat-kohli.png" alt="Virat Kohli">
+        <h1>Virat Kohli</h1>
+        <h4 class="status">Stranger</h4>
+        <div class="btn-container">
+            <button class="btn-container1" id="add">Add Friend</button>
+        </div>
+    </div>
+    <script>
+        let isstatus = document.querySelector(".status")
+        var addfriend = document.querySelector("#add")
+        let flag = 0
+        addfriend.addEventListener("click",function(){
+            if (flag == 0){
+                isstatus.innerHTML='Friends'
+                isstatus.style.color='aqua'
+                addfriend.innerHTML='Remove Friend'
+                flag = 1
+            }
+            else{
+                isstatus.innerHTML = 'Stranger'
+                isstatus.style.color='red'
+                addfriend.innerHTML='Add Friend'
+                flag = 0
+            }
+        })
+
+    </script>
+</body>
+</html>
