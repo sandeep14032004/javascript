@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #394205;
+        }
+        .container {
+            text-align: center;
+            background-color: #49034b;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(90, 7, 7, 0.1);
+            color: rgb(245, 255, 255);
+        }
+        h1, h3 {
+            color: #c6c6c6;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .guide {
+            margin-top: 30px;
+        }
+        .guide p {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form id="bmiForm">
+            <label for="height">Height (cm)(1 ft = 30.48cm):</label>
+            <input type="text" id="height" name="height" placeholder="Enter your height in cm" required><br>
+            
+            <label for="weight">Weight (kg):</label>
+            <input type="text" id="weight" name="weight" placeholder="Enter your weight in kg" required><br>
+            
+            <button type="submit">Calculate BMI</button>
+        </form>
+        
+        <div class="result" id="result"></div>
+        
+        <div class="guide">
+            <h3>BMI Weight Guide</h3>
+            <p class="one">Underweight: &lt; 18.5</p>
+            <p class="two">Normal Weight: 18.5 - 24.9</p>
+            <p class="three">Overweight: 25 - 29.9</p>
+            <p class="four">Obesity: &ge; 30</p>
+        </div>
+    </div>
+    <script>
+        let form = document.querySelector("form");
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let height = parseFloat(document.querySelector('#height').value);
+            let weight = parseFloat(document.querySelector('#weight').value);
+            let result = document.querySelector('#result');
+            let bmi;
+            document.querySelector(".one").style.backgroundColor = "";
+            document.querySelector(".two").style.backgroundColor = "";
+            document.querySelector(".three").style.backgroundColor = "";
+            document.querySelector(".four").style.backgroundColor = "";
+
+            if (isNaN(height) || height <= 0) {
+                result.innerHTML = 'Please give a valid height';
+            } else if (isNaN(weight) || weight <= 0) {
+                result.innerHTML = 'Please give a valid weight';
+            } else {
+                bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+                result.innerHTML = `<span>Your BMI is ${bmi}</span>`;
+
+                if (bmi < 18.5) {
+                    document.querySelector(".one").style.backgroundColor = "red";
+                } else if (bmi >= 18.5 && bmi <= 24.9) {
+                    document.querySelector(".two").style.backgroundColor = "green";
+                } else if (bmi >= 25 && bmi <= 29.9) {
+                    document.querySelector(".three").style.backgroundColor = "yellow";
+                    document.querySelector(".three").style.color = "black";
+                } else if (bmi >= 30) {
+                    document.querySelector(".four").style.backgroundColor = "orange";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
