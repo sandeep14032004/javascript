@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Shopping Cart</title>
     <style>
-        .cart-item {
-            margin-bottom: 10px;
-        }
-        .price {
-            font-weight: bold;
-        }
-        body{
-            background-color: black;
-            color: white;
-        }
+      .cart-item {
+        margin-bottom: 10px;
+      }
+      .price {
+        font-weight: bold;
+      }
+      body {
+        background-color: black;
+        color: white;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Shopping Cart</h1>
     <div class="cart">
-        <div class="cart-item">
-            <span>Item 1:</span> 
-            <span class="price">2999</span>
-        </div>
-        <div class="cart-item">
-            <span>Item 2:</span> 
-            <span class="price">3999</span>
-        </div>
-        <div class="cart-item">
-            <span>Item 3:</span> 
-            <span class="price">1999</span>
-        </div>
-        <div class="cart-item">
-            <span>Item 4:</span> 
-            <span class="price">1499</span>
-        </div>
-        <div class="cart-item">
-            <span>Item 5:</span> 
-            <span class="price">2499</span>
-        </div>
+      <div class="cart-item">
+        <span>Item 1:</span>
+        <span class="price">2999</span>
+      </div>
+      <div class="cart-item">
+        <span>Item 2:</span>
+        <span class="price">3999</span>
+      </div>
+      <div class="cart-item">
+        <span>Item 3:</span>
+        <span class="price">1999</span>
+      </div>
+      <div class="cart-item">
+        <span>Item 4:</span>
+        <span class="price">1499</span>
+      </div>
+      <div class="cart-item">
+        <span>Item 5:</span>
+        <span class="price">2499</span>
+      </div>
     </div>
     <div>Total Price: <span id="total-price"></span></div>
 
     <script>
-        let prices = document.getElementsByClassName('price')
-        console.log(prices)
-        for(let i = 0 ; i < prices.length ; i++){
-            console.log(prices[i].innerText)
-        }
-        let initialprice = 0 ;
-        for(let i = 0 ; i < prices.length ;i++){
-            initialprice+=Number(prices[i].innerText)
-        }
-        console.log(initialprice)
-        document.getElementById('total-price').innerText = initialprice
+      const prices = document.querySelectorAll(".price");
+
+      // Convert NodeList to an array and map the text content to numbers
+      const priceArr = Array.from(prices, (item) => Number(item.textContent));
+
+      // Calculate the total price using reduce
+      const totalPrice = priceArr.reduce((acc, curr) => acc + curr, 0);
+
+      // Output the total price to the DOM
+      document.getElementById("total-price").textContent = totalPrice;
+
+      console.log(totalPrice); // Debug: Log total price in the console
     </script>
-</body>
+  </body>
 </html>

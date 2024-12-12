@@ -1,6 +1,6 @@
 // const Jsuser = {
 //     "name" : "sandeep",
-//     age : 21 , 
+//     age : 21 ,
 //     branch : "CSE",
 //     university : "giet university"
 // }
@@ -81,8 +81,6 @@
 // const mergedCar = { ...car, ...additionalInfo };
 // console.log('Merged Car:', mergedCar);
 
-
-
 // ********************************************
 // const tinderuser = new Object()
 // tinderuser.id = "123we"
@@ -99,4 +97,11 @@
 // // const {price}=course
 // // console.log(price);
 
+let Shop = {
+  name: "kanha",
+  email: "kanha@gmail.com",
+  address: "jagatsinghpur",
+};
 
+let { address: a } = Shop;
+console.log(a);

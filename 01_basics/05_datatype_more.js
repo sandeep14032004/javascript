@@ -69,7 +69,6 @@
 // console.log(typeof functionExample);                  // "function"
 // console.log(typeof dateExample);                      // "object"
 
-
 //********************************************************************************************************* */
-let Name = "sandeep"
-let oname = Name
+let Name = "sandeep";
+let oname = Name;

@@ -3,10 +3,10 @@
 // Global Scope
 // Variables declared outside any function or block have global scope.
 // They can be accessed from anywhere in the code.
-let globalVar = 'I am global';
+let globalVar = "I am global";
 
 function displayGlobalVar() {
-    console.log(globalVar); // Accessible
+  console.log(globalVar); // Accessible
 }
 
 displayGlobalVar();
@@ -16,8 +16,8 @@ console.log(globalVar); // Accessible
 // Variables declared within a function are only accessible within that function.
 // They are not accessible outside the function.
 function myFunction() {
-    let functionVar = 'I am in a function';
-    console.log(functionVar); // Accessible
+  let functionVar = "I am in a function";
+  console.log(functionVar); // Accessible
 }
 
 myFunction();
@@ -27,14 +27,14 @@ myFunction();
 // Variables declared with let and const within a block (e.g., inside an if statement or a loop)
 // have block scope. They are only accessible within that block.
 {
-    let blockVar = 'I am in a block';
-    console.log(blockVar); // Accessible
+  let blockVar = "I am in a block";
+  console.log(blockVar); // Accessible
 }
 // console.log(blockVar); // Uncaught ReferenceError: blockVar is not defined
 
 if (true) {
-    const blockConst = 'I am in an if block';
-    console.log(blockConst); // Accessible
+  const blockConst = "I am in an if block";
+  console.log(blockConst); // Accessible
 }
 // console.log(blockConst); // Uncaught ReferenceError: blockConst is not defined
 
@@ -43,13 +43,13 @@ if (true) {
 // by its position within the source code, and nested functions have access to variables
 // declared in their outer scope.
 function outerFunction() {
-    let outerVar = 'I am outside';
+  let outerVar = "I am outside";
 
-    function innerFunction() {
-        console.log(outerVar); // Accessible
-    }
+  function innerFunction() {
+    console.log(outerVar); // Accessible
+  }
 
-    innerFunction();
+  innerFunction();
 }
 
 outerFunction();
@@ -68,25 +68,31 @@ outerFunction();
 
 // Example to show various scopes
 function showScopes() {
-    // Function Scope
-    let functionScopedVar = 'I am function scoped';
+  // Function Scope
+  let functionScopedVar = "I am function scoped";
 
-    if (true) {
-        // Block Scope
-        let blockScopedVar = 'I am block scoped';
-        console.log(blockScopedVar); // Accessible
-    }
+  if (true) {
+    // Block Scope
+    let blockScopedVar = "I am block scoped";
+    console.log(blockScopedVar); // Accessible
+  }
 
-    // console.log(blockScopedVar); // Uncaught ReferenceError: blockScopedVar is not defined
+  // console.log(blockScopedVar); // Uncaught ReferenceError: blockScopedVar is not defined
 
-    function innerFunction() {
-        // Lexical Scope
-        console.log(functionScopedVar); // Accessible
-    }
+  function innerFunction() {
+    // Lexical Scope
+    console.log(functionScopedVar); // Accessible
+  }
 
-    innerFunction();
+  innerFunction();
 }
 
 showScopes();
 console.log(globalVar); // Accessible
 // console.log(functionScopedVar); // Uncaught ReferenceError: functionScopedVar is not defined
+
+const addTwo = (num) => {
+  console.log(num + 1);
+};
+
+addTwo(5);

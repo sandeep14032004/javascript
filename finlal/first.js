@@ -1,14 +1,12 @@
-// const promiseOne = new Promise(function (resolve,reject) {
-//     setTimeout(function(){
-//         console.log('Async task is complete');
-//         resolve()
-//     },1000)
-    
-// })
-// promiseOne.then(function(){
-//     console.log("Promise consumed");
-// })
-
+const promiseOne = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    console.log("Async task is complete");
+    resolve();
+  }, 1000);
+});
+promiseOne.then(function () {
+  console.log("Promise consumed");
+});
 
 // new Promise(function(resolve,reject){
 //     setTimeout(() => {
@@ -18,7 +16,6 @@
 // }).then(function () {
 //     console.log("promise consumed");
 // })
-
 
 // const Promisethree = new Promise(function (resolve,reject) {
 //     setTimeout(() => {
@@ -70,7 +67,7 @@
 //    try {
 //     const response = await promiseFive
 //     console.log(response);
-    
+
 //    } catch (error) {
 //     console.log(error);
 //    }
@@ -97,4 +94,3 @@
 // .catch((error)=>{
 //     console.log(error);
 // })
-

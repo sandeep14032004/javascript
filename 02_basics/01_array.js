@@ -97,15 +97,15 @@
 // const nestedArr = [1, 2, [3, 4, [5, 6]]];
 // console.log(nestedArr.flat(2));
 
-const marvel_heros = ["iron man","spider man","captain america"]
-const dc_heros = ["batman","superman","flash"]
+const marvel_heros = ["iron man", "spider man", "captain america"];
+const dc_heros = ["batman", "superman", "flash"];
 // let all_heros = marvel_heros.concat(dc_heros)
 // console.log(all_heros);
 // const all_heros1 = [...marvel_heros,...dc_heros]
 // console.log(all_heros1);
 const nestedArray = [1, [2, 3], [4, [5, 6]]];
 // const flatArray = nestedArray.flat(Infinity);
-// console.log(flatArray); 
+// console.log(flatArray);
 
-console.log(Array.isArray("sandeep"))
+console.log(Array.isArray("sandeep"));
 console.log(Array.from("sandeep"));
